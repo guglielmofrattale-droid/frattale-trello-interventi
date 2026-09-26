@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Report intervento — Frattale &amp; Partners</title>
+    <link rel="stylesheet" href="./report.css" />
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  </head>
+  <body>
+    <div class="barra" role="toolbar" aria-label="Azioni report">
+      <button type="button" id="stampa" class="azione" disabled>Stampa / Salva PDF</button>
+      <button type="button" id="nuova-finestra" class="azione azione--secondaria" disabled>
+        Apri in una nuova finestra
+      </button>
+    </div>
+
+    <p id="stato" class="stato" role="status">Caricamento dell'intervento…</p>
+
+    <section id="autorizza" class="autorizza" hidden>
+      <h2>Autorizza la lettura dei commenti</h2>
+      <p>
+        Per includere nel report tutti i commenti e le checklist, Trello chiede un'autorizzazione
+        una tantum in sola lettura. Nessun dato lascia Trello.
+      </p>
+      <button type="button" id="autorizza-bottone" class="azione">Autorizza</button>
+    </section>
+
+    <article id="report" class="foglio" hidden></article>
+
+    <script type="module" src="./report.js"></script>
+  </body>
+</html>

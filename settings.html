@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Impostazioni Interventi Studio</title>
+    <link rel="stylesheet" href="./settings.css" />
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  </head>
+  <body>
+    <form id="contenuto" class="impostazioni" novalidate>
+      <p id="solo-lettura" class="avviso" hidden>
+        Solo gli amministratori della bacheca possono modificare queste impostazioni.
+      </p>
+
+      <label class="campo">
+        <span class="campo__etichetta">Lista degli interventi aperti</span>
+        <select id="lista-aperti" required></select>
+      </label>
+
+      <fieldset class="campo">
+        <legend class="campo__etichetta">Liste degli interventi chiusi</legend>
+        <div id="liste-chiuse" class="scelte"></div>
+      </fieldset>
+
+      <label class="campo">
+        <span class="campo__etichetta">Giorni prima dell'evidenza in rosso</span>
+        <input id="soglia" type="number" min="1" max="365" step="1" required />
+      </label>
+
+      <ul id="errori" class="errori" hidden></ul>
+
+      <button id="salva" type="submit" class="azione">Salva impostazioni</button>
+      <p id="esito" class="esito" role="status" hidden></p>
+
+      <details class="ids">
+        <summary>Identificativi per l'email di riepilogo (n8n)</summary>
+        <dl>
+          <dt>ID bacheca</dt>
+          <dd id="id-bacheca"></dd>
+          <dt>ID lista aperti</dt>
+          <dd id="id-lista-aperti">—</dd>
+        </dl>
+      </details>
+    </form>
+    <script type="module" src="./settings.js"></script>
+  </body>
+</html>
